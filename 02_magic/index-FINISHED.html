@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic</title>
+    <style>
+        body, div {
+            margin: 0;
+        }
+        body {
+            background: white;
+            overflow: hidden;
+        }
+        .container {
+            width: 100%;
+            height: 100vh;
+        }
+        div {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.2/tinycolor.min.js"></script>
+    <script>
+
+        var xBg, yBg, xTxt, yTxt
+
+        // function getRandomColor() {
+        // var letters = '0123456789ABCDEF';
+        // var color = '#';
+        // for (var i = 0; i < 6; i++) {
+        //     color += letters[Math.floor(Math.random() * 16)];
+        // }
+        // return color;
+        // }
+
+        document.addEventListener('mousemove', function(e) {
+
+            if (e.clientY >= window.innerHeight/2) {
+            yTxt = Math.floor((e.clientY/(window.innerHeight/2) - 1) * 100)
+            } else {
+            yTxt = 100 + Math.floor((e.clientY/(window.innerHeight/2) - 1) * 100)
+            }
+            if (e.clientX >= window.innerWidth/2) {
+            xTxt = Math.floor((e.clientX/(window.innerWidth/2) - 1) * 360)            
+            } else {
+            xTxt = 360 + Math.floor((e.clientX/(window.innerWidth/2) - 1) * 360)            
+            }
+            
+            var one = document.createElement('div')
+            var two = document.createElement('div')
+
+            one.style.background = tinycolor('hsl('+ xTxt +',80%,'+ 50 +'%)')
+            two.style.background = tinycolor('hsl('+ xTxt +',80%,'+ 50 +'%)').complement()
+            // one.style.borderRadius = '100%'
+            // two.style.borderRadius = '100%'
+
+            e.target.appendChild(one)
+            e.target.appendChild(two)
+            e.target.style.background = 'transparent'
+            e.target.style.borderRadius = 'none'
+
+            if (Math.random() > 0.5) {
+                e.target.style.flexDirection = 'column'
+            }
+        })
+    </script>
+</body>
+</html>
