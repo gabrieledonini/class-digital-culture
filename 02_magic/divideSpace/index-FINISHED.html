@@ -25,6 +25,7 @@
             align-items: center;
             text-align: center;
             color: transparent;
+            border-radius: 100%;
         }
     </style>
 </head>
@@ -36,15 +37,6 @@
     <script>
 
         var xBg, yBg, xTxt, yTxt
-
-        // function getRandomColor() {
-        // var letters = '0123456789ABCDEF';
-        // var color = '#';
-        // for (var i = 0; i < 6; i++) {
-        //     color += letters[Math.floor(Math.random() * 16)];
-        // }
-        // return color;
-        // }
 
         document.addEventListener('mousemove', function(e) {
 
@@ -64,8 +56,6 @@
 
             one.style.background = tinycolor('hsl('+ xTxt +',80%,'+ 50 +'%)')
             two.style.background = tinycolor('hsl('+ xTxt +',80%,'+ 50 +'%)').complement()
-            // one.style.borderRadius = '100%'
-            // two.style.borderRadius = '100%'
 
             e.target.appendChild(one)
             e.target.appendChild(two)
