@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100%;
+            background: black;
+            margin: 0;
+        }
+        .container {
+            height: 100vh;
+            width: 100%;
+            background: black;
+            margin: 0;
+        }
+        .shape {
+            /* width: 400px; */
+            height: 400px;
+            border-radius: 100%;
+            mix-blend-mode: difference;
+            position: fixed;
+            top: calc(50% - 200px);
+            font-size: 300px;
+            font-family: Helvetica, sans-serif;
+        }
+        .left {
+            color: red;
+            left: 0;
+        }
+        .right {
+            color: blue;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="shape left">
+            A
+        </div>
+        <div class="shape right">
+            B
+        </div>
+    </div>
+
+    <script>
+
+        window.addEventListener('mousemove', function(e) {
+
+            console.log(e.clientX);
+            document.querySelector('.left').style.left = e.clientX + 'px'
+            document.querySelector('.right').style.right = e.clientX + 'px'
+        })
+
+    </script>
+</body>
+</html>

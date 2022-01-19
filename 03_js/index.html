@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+            
+    <script>
+
+        var animals = ['img/cat.png', 'img/dog.png', 'img/turtle.png']
+        var count = 0
+
+        // listening for a mouse move event on the window
+        window.addEventListener('mousemove', function(event) {
+
+            // create a new image element
+            var newImage = document.createElement('img')
+
+            // put the image url inside
+            newImage.src = animals[count]
+
+            // set the position based on my mouse position at the moment of this event
+            newImage.style.left = event.clientX + 'px'
+            newImage.style.top = event.clientY + 'px'
+            
+            // adding this new image element to the website
+            document.querySelector('body').appendChild(newImage)
+
+            // remove the image after 2 seconds or 2000 milliseconds
+            setTimeout(function() {
+                document.body.removeChild(newImage)
+            }, 2000)
+
+        })
+
+        window.addEventListener('click', function() {
+            if (count >= animals.length - 1) {
+                count = 0
+            } else {
+                count++  
+            }
+        })
+
+    </script>
+
+    
+</body>
+</html>
