@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    /* height: 400vh; */
+    /* background: linear-gradient(red, orange); */
+    font-family: "ABC Synt";
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    /* position: fixed; */
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 120px;
+    text-align: center;
+    z-index: -1;
+}
+
+.works,
+.grid {
+    padding: 1px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 25vh);
+    grid-gap: 1px;
+    background-color: white;
+}
+
+/* .grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+} */
+
+.work {
+    -webkit-font-smoothing: antialiased;
+    background-color: blue;
+    overflow: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+    font-size: 27px;
+    line-height: 27px;
+    letter-spacing: 0.1px;
+}
+
+.workRed {
+    background-color: red;
+}
+
+.work__cover {
+}
+
+video {
+    /* height: 30vw;
+    width: 100%; */
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.work__title {
+    font-size: 24px;
+    text-align: center;
+    text-transform: capitalize;
+}
